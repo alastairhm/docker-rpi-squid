@@ -1,0 +1,9 @@
+version: '2'
+services:
+  squid:
+    image: alastairhm/docker-rpi-squid:latest
+    container_name: squid
+    restart: unless-stopped
+    ports:
+      - '3128:3128'
+

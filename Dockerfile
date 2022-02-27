@@ -3,7 +3,8 @@ RUN apk update && \
 apk upgrade && \
 apk add bash squid && \
 rm -rf /var/cache/apk/* && \
-mkdir -p /var/log/squid3
+mkdir -p /var/log/squid
+COPY squid.conf /etc/squid/squid.conf
 EXPOSE 3128
 ENTRYPOINT ["/usr/sbin/squid"] 
-CMD ["-N", "-d 1", "-D"]
+CMD ["-N", "-d 1"]
